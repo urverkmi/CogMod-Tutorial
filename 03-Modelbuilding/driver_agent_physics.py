@@ -87,7 +87,7 @@ class driver_agent_physics(Env):
             if self.collision:
                 self.reward = self.collision_reward
             else:
-                self.reward = self.goal_reward - self.penalty_per_tick * self.ticks
+                self.reward = self.goal_reward - self.penalty_per_tick * (self.ticks**2)
 
         self.belief = self.get_belief()
 
